@@ -1,0 +1,203 @@
+{
+  "_args": [
+    [
+      "vuejs-datatable",
+      "/opt/lampp/htdocs/SistemaDacom/DacomApp/DacomApp/frontend"
+    ]
+  ],
+  "_from": "vuejs-datatable@latest",
+  "_hasShrinkwrap": false,
+  "_id": "vuejs-datatable@2.0.0-alpha.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/vuejs-datatable",
+  "_nodeVersion": "12.13.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/vuejs-datatable_2.0.0-alpha.5_1575251881981_0.6654098696428721"
+  },
+  "_npmUser": {
+    "email": "alexandre.j.p.germain@gmail.com",
+    "name": "gerkin"
+  },
+  "_npmVersion": "6.12.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "vuejs-datatable",
+    "raw": "vuejs-datatable",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vuejs-datatable/-/vuejs-datatable-2.0.0-alpha.5.tgz",
+  "_shasum": "09c8594ce9b5d8c69d358585bcb9a54f5f3f3b45",
+  "_shrinkwrap": null,
+  "_spec": "vuejs-datatable",
+  "_where": "/opt/lampp/htdocs/SistemaDacom/DacomApp/DacomApp/frontend",
+  "author": {
+    "email": "pstephan1187@gmail.com",
+    "name": "Patrick Stephan"
+  },
+  "browser": "dist/vuejs-datatable.esm",
+  "bugs": {
+    "url": "https://github.com/GerkinDev/vuejs-datatable/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/git-cz"
+    }
+  },
+  "contributors": [
+    {
+      "name": "GerkinDev",
+      "email": "agermain@ithoughts.io",
+      "url": "https://ithoughts.io/"
+    }
+  ],
+  "dependencies": {
+    "core-js": "^3.2.1",
+    "object-path": "^0.11.4",
+    "vue-property-decorator": "^8.2.2"
+  },
+  "description": "A Vue.js component for filterable, sortable, and paginated tables.",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@diaspora/dev-tslint": "^1.2.0",
+    "@types/axios": "^0.14.0",
+    "@types/fs-extra": "^8.0.0",
+    "@types/jest": "^24.0.18",
+    "@types/jsdom": "^12.2.4",
+    "@types/lodash": "^4.14.138",
+    "@types/object-path": "^0.11.0",
+    "@types/semver": "^6.0.2",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "axios": "^0.19.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-env": "^1.7.0",
+    "chalk": "^3.0.0",
+    "copyfiles": "2.1.1",
+    "cypress": "^3.4.1",
+    "flush-promises": "^1.0.2",
+    "fs-extra": "^8.1.0",
+    "git-cz": "^3.2.1",
+    "jasmine-core": "^3.4.0",
+    "jest": "^24.9.0",
+    "jscc": "^1.1.1",
+    "jsdom": "^15.1.1",
+    "lodash": "^4.17.15",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-license": "^0.13.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.25.0",
+    "rollup-plugin-visualizer": "^3.2.2",
+    "rollup-plugin-vue-template-compiler": "git+https://github.com/GerkinDev/rollup-plugin-vue-template-compiler.git",
+    "semver": "^6.3.0",
+    "standard-version": "^7.0.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.3.0",
+    "tsconfig": "^7.0.0",
+    "tslint": "^5.20.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-tutorials": "0.0.1-alpha.1",
+    "typescript": "^3.6.3",
+    "vue": "^2.6.10",
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dist": {
+    "fileCount": 122,
+    "integrity": "sha512-Ubvr34bwllDq1XUsbiLIqqG3ZcOAN9CCbRhgw2FC+27XBXktSG55tA2T/cUR2p/fgNlLbaoL0qBo9w6HZ3isHw==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd5G+qCRA9TVsSAnZWagAATIEP/R17nkae2wStKf+o23n+\nRKZS4DUrvzqVS0lrFmO7OE5ciEUQ6mdwyal1mH3q+Qc9FS66LA57D5TenMlg\n6WS+zmsRyJsHhQ0TcdY1eJ3MpwZQDFipHMwnXmEnhpYLMQ7SlHxwsCRIpo3O\nHAPbzIxbpTRBnN54CbrbadOBezvO/CACWvUqKRMBysqZh9BXD9lhxoYO0fjA\nXCASfK0J/cJK7mDH3dE39AhM1SSEpKja7Xmz3oDKz+gstKQoZJj/cShNWT2J\nO2sijfzMe494ukoKE0SFDFu0YqD4XtanvgCj4GQixvDK4WMzbhsPUhVFL73U\ng3WGcNNGN3Y8eGORJw+W6CrGDBUBs1Tzkk3wsXBtSA3kwwRosQAGgCVaJOpd\n2IWQiU3FG/uKe76ecdUcDSO2ljgmlsGny6rWPlBpDj7SHRYtaO4e1M6AfOK4\nU7nuWsUK6TbPwS2rx3j4sGilpLHFaq5/93yNh8xiIoC776ougacjl7NFEknR\nOiCcPFNo6I9L+1seubyf3BQ9ldE94QUCbGrB8Fu0msDOB7uUFpbrreRwdwJI\nRwcxtoaq7JwAhXrqmgdCHAn6XmJ3dAPRypMzj6Toc8AoSJtu5xqZey5Q1XEe\n8lcJj/q1AZXHkn26hisVo7Te7Y3w1vqHIvza6vvAzQ1K7kvE2Cx99zEwrXZf\nGLN/\r\n=SSKD\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "09c8594ce9b5d8c69d358585bcb9a54f5f3f3b45",
+    "tarball": "https://registry.npmjs.org/vuejs-datatable/-/vuejs-datatable-2.0.0-alpha.5.tgz",
+    "unpackedSize": 2630494
+  },
+  "gitHead": "bca53007c86fd39a99273a0b137ab6cf1d43529e",
+  "homepage": "https://github.com/GerkinDev/vuejs-datatable#readme",
+  "keywords": [
+    "Vue.js",
+    "datatable",
+    "filter",
+    "paginate",
+    "pagination",
+    "sort",
+    "sortable",
+    "table",
+    "vue"
+  ],
+  "license": "MIT",
+  "main": "dist/vuejs-datatable.esm",
+  "maintainers": [
+    {
+      "name": "pstephan1187",
+      "email": "pstephan1187@gmail.com"
+    }
+  ],
+  "module": "dist/vuejs-datatable.esm",
+  "name": "vuejs-datatable",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "vue": "^2.2.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerkinDev/vuejs-datatable.git"
+  },
+  "scripts": {
+    "build": "npm run build:production",
+    "build:dev": "rollup -c rollup.config.js",
+    "build:production": "rollup -c rollup.config.js --environment BUILD:production",
+    "build:watch": "rollup -c rollup.config.js --watch",
+    "ci": "ts-node -P tsconfig.json  -O {\\\"module\\\":\\\"commonjs\\\"} ci/run-ci.ts",
+    "doc": "npm run doc:examples && npm run doc:typedoc && npm run doc:copy-assets",
+    "doc:copy-assets": "npm run doc:copy-assets:demos && npm run doc:copy-assets:lib && npm run doc:styles && npm run doc:copy-assets:data",
+    "doc:copy-assets:data": "npx copyfiles -f tutorials/assets/rows.js docs/assets/js",
+    "doc:copy-assets:demos": "npx copyfiles -f tutorials/dist/*.js docs/assets/js/tutorials",
+    "doc:copy-assets:lib": "npx copyfiles -f dist/vuejs-datatable.js dist/vuejs-datatable.js.map dist/themes/bootstrap-3.js docs/assets/js",
+    "doc:examples": "rimraf tutorials/{dist,.tmp} && ts-node -P ./tsconfig.json -O {\\\"module\\\":\\\"commonjs\\\"} tutorials/build/build-examples.ts",
+    "doc:styles": "node-sass --output-style compressed ./tutorials/assets/additional-styles.scss --output ./docs/assets/css",
+    "doc:typedoc": "rimraf docs && typedoc --options ./typedoc.json",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --fix --project tsconfig.json",
+    "prerelease": "standard-version -a --prerelease",
+    "release": "standard-version -a",
+    "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
+    "test:ci:watch": "npm run test:ci --watch",
+    "test:e2e": "if [ -z \"$CYPRESS_KEY\" ]; then cypress run; else cypress run --record --key $CYPRESS_KEY; fi",
+    "test:e2e:gui": "cypress open",
+    "test:integration": "jest --config jest.integration.config.js",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:unit": "jest --config jest.unit.config.js",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "version": "npm run build && git add dist --force && npm run doc && git add docs --force"
+  },
+  "standard-version": {
+    "releaseCommitMessageFormat": "chore: 🤖 release {{currentTag}} from {{previousTag}}",
+    "scripts": {
+      "postbump": "npm run version"
+    }
+  },
+  "types": "dist/vuejs-datatable.esm",
+  "version": "2.0.0-alpha.5"
+}

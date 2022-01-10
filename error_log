@@ -1,0 +1,111 @@
+[20-Apr-2020 20:03:21 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Style.php on line 790
+[20-Apr-2020 20:03:34 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Style.php on line 1682
+[22-Apr-2020 19:58:12 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Style.php on line 790
+[23-Apr-2020 14:52:51 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Style.php on line 1682
+[30-Apr-2020 21:50:22 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 284
+[30-Apr-2020 21:51:32 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 282
+[30-Apr-2020 21:51:38 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 282
+[30-Apr-2020 21:52:26 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 284
+[30-Apr-2020 21:52:30 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 284
+[30-Apr-2020 21:52:34 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 284
+[30-Apr-2020 21:52:38 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 1559
+[30-Apr-2020 21:52:49 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/programacionlogr/public_html/AppCore/vendor/dompdf/dompdf/src/Css/Stylesheet.php on line 282
+[22-May-2020 20:28:08 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:08 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:08 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:10 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:10 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:10 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:14 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:14 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:14 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:16 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:16 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:16 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:18 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:18 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:18 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:20 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:20 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:20 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:23 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:23 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:23 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:28:27 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:27 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:28:27 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[22-May-2020 20:29:41 UTC] PHP Warning:  include(/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php): failed to open stream: No such file or directory in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:29:41 UTC] PHP Warning:  include(): Failed opening '/home/programacionlogr/public_html/AppCore/vendor/composer/../../app/Http/Kernel.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/programacionlogr/public_html/AppCore/vendor/composer/ClassLoader.php on line 444
+[22-May-2020 20:29:41 UTC] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#3 /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#4 /home/programacionlogr/public_html/AppCore/vendor/laravel/framewor in /home/programacionlogr/public_html/AppCore/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[30-Sep-2020 10:46:49 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /home/programacionlogr/public_html/xxx.php on line 12
+[30-Sep-2020 10:46:49 UTC] PHP Warning:  Use of undefined constant s - assumed 's' (this will throw an Error in a future version of PHP) in /home/programacionlogr/public_html/xxx.php on line 13
+[30-Sep-2020 10:46:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function eregi() in /home/programacionlogr/public_html/xxx.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/programacionlogr/public_html/xxx.php on line 14
+[30-Sep-2020 10:48:07 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /home/programacionlogr/public_html/xxx.php on line 12
+[30-Sep-2020 10:48:07 UTC] PHP Warning:  Use of undefined constant s - assumed 's' (this will throw an Error in a future version of PHP) in /home/programacionlogr/public_html/xxx.php on line 13
+[30-Sep-2020 10:48:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function eregi() in /home/programacionlogr/public_html/xxx.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/programacionlogr/public_html/xxx.php on line 14
+[30-Sep-2020 10:48:33 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /home/programacionlogr/public_html/xxx.php on line 12
+[30-Sep-2020 10:48:33 UTC] PHP Warning:  Use of undefined constant s - assumed 's' (this will throw an Error in a future version of PHP) in /home/programacionlogr/public_html/xxx.php on line 13
+[30-Sep-2020 10:48:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function eregi() in /home/programacionlogr/public_html/xxx.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/programacionlogr/public_html/xxx.php on line 14
