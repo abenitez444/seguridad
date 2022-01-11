@@ -7,7 +7,16 @@ new Vue({
 		avatar:'',
 		previewAvatar:'',
 		disabledSend: false,
-		agency: {},
+		agency: {
+			name_agency: '',
+			rut: '',
+			email: '',
+			local_agency: '',
+			tlf_agency: '',
+			desc_sociality: '',
+			country: '',
+			state: '',
+		},
 		form: {},
 		pagination: {
 			'total': 0,
@@ -19,11 +28,12 @@ new Vue({
 		},
 		offset: 3,
 		columns: [
-            // {label: 'Imagén', field: 'image'},
-            //{label: 'Descripción', field: 'name_agency'},
-            // {label: 'Distribución', field: 'cant_turn'},
-            // {label: 'Cantidad de Vigilantes', field: 'cant_watchmen'},
-            // {label: 'Status', field: ''},
+            //{label: 'Imagén', field: 'avatar'},
+            {label: 'Empresa', field: 'name_agency'},
+            {label: 'Rut', field: 'rut'},
+            {label: 'Email', field: 'email'},
+            {label: 'Teléfono', field: 'local_agency'},
+            {label: 'Status', field: ''},
             // {label: '', field: ''},
             // {label: 'address', representedAs: ({address, city, state}) => `${address}<br />${city}, ${state}`, interpolate: true}
         ],
@@ -52,12 +62,14 @@ new Vue({
 		//  - Peso máximo 3MB.
 		//  - Formato:   . JPG , . JPEG o . PNG
 		setAvatar(e){
-			
 		  this.avatar = e;
-		  console.log(e.target.files[0]);
-		  this.previewAvatar = e.srcElement.files[0];
-		  this.disabledSend = false;
-
+		  this.previewAvatar = URL.createObjectURL(e)
+		},
+		uploadCountry(){
+			console.log("Pais");
+		},
+		uploadStates(){
+			console.log("Estado");
 		},
 		changePerPage()
 		{

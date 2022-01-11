@@ -77,9 +77,10 @@
                 	<datatable class="table table-hover table-hover-animation mb-0" :columns="columns" :data="rows" :filter="filter">
 	                    <template slot-scope="{ row }">
 	                        <tr>
-	                            <td class="text-center">@{{ row.name }}</td>
-	                            <td class="text-center">@{{ row.cant_turn }}</td>
-	                            <td class="text-center">@{{ row.cant_watchmen }}</td>
+	                            <td class="text-center"></td>
+	                            <td class="text-center"></td>
+	                            <td class="text-center"></td>
+	                            <td class="text-center"></td>
 	                            <td class="text-center">
 	                                <is-active :is_active="row.is_active"></is-active>
 	                            </td>
@@ -135,24 +136,36 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-body">
-						<form enctype="multipart/form-data" id="formImg">
+							<template>
+							<form enctype="multipart/form-data" id="formImg">
+								<v-row>
+									<v-col cols="12" md="12" lg="12" class="text-center">
+										<v-avatar
+										size="130"
+										color="grey"
+										>
+											<v-img :src="previewAvatar"></v-img>
+										</v-avatar>
+									</v-col>
+								</v-row>
+								<v-row>
+									<v-col cols="12" md="4" lg="4" class="text-center offset-4">
+										<v-file-input
+											placeholder="Cargar imagen"
+											label="Avatar"
+											type="file"
+											v-on:change="setAvatar"
+										></v-file-input>
+									</v-col>
+								</v-row>
+						    </form>	
+							</template>
 							<div class="row">
-							    <div class="col-12 col-sm-12 col-md-7 col-lg-7 offset-5 mb-3">
-									<img :src="previewAvatar" class="rounded-circle" alt="Cinque Terre" width="200" height="180">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center mb-5">
-									<input type="file" placeholder="Cargar imagen" :clearable="false" v-on:change="setAvatar">
-								</div>
-							</div>
-						</form>
-								<div class="row">
 								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
 									<div class="form-group">
 										<label>Nombre empresa *</label>
 										<div class="input-group mb-3">
-											<input type="text"  class="form-control" placeholder="Ingrese el nombre de la empresa" name="name_agency" >
+											<input type="text" class="form-control" placeholder="Ingrese el nombre de la empresa" name="name_agency" v-model="agency.name_agency">
 											<div class="input-group-append">
 												<div class="input-group-text">
 													<span class="fas fa-file-signature"></span>
@@ -165,7 +178,7 @@
 	                                <div class="form-group">
 	                                    <label>RUT</label>
 	                                    <div class="input-group mb-3">
-	                                        <input type="text"  class="form-control" placeholder="Ingrese el rut de la empresa" name="rut" >
+	                                        <input type="text"  class="form-control" placeholder="Ingrese el rut de la empresa" name="rut" v-model="agency.rut">
 	                                        <div class="input-group-append">
 	                                            <div class="input-group-text">
 	                                                <span class="fas fa-credit-card"></span>
@@ -178,7 +191,7 @@
 	                                <div class="form-group">
 	                                    <label>Email empresa</label>
 	                                    <div class="input-group mb-3">
-	                                        <input type="email" min="0" class="form-control" placeholder="Ingrese el correo electrónico de la empresa" name="email" >
+	                                        <input type="email" min="0" class="form-control" placeholder="Ingrese el correo electrónico de la empresa" name="email" v-model="agency.email">
 	                                        <div class="input-group-append">
 	                                            <div class="input-group-text">
 	                                                <span class="fas fa-envelope"></span>
@@ -191,7 +204,7 @@
 	                                <div class="form-group">
 	                                    <label>Teléfono empresa</label>
 	                                    <div class="input-group mb-3">
-	                                        <input type="number" min="11" class="form-control" placeholder="Ingrese teléfono de la empresa" name="local_agency" >
+	                                        <input type="number" min="11" class="form-control" placeholder="Ingrese teléfono de la empresa" name="local_agency" v-model="agency.local_agency">
 	                                        <div class="input-group-append">
 	                                            <div class="input-group-text">
 	                                                <span class="fas fa-phone"></span>
@@ -204,7 +217,7 @@
 	                                <div class="form-group">
 	                                    <label>Teléfono movil/WhatsApp</label>
 	                                    <div class="input-group mb-3">
-	                                        <input type="number" min="11" class="form-control" placeholder="Ingrese el movil de la empresa" name="tlf_agency" >
+	                                        <input type="number" min="11" class="form-control" placeholder="Ingrese el movil de la empresa" name="tlf_agency" v-model="agency.tlf_agency">
 	                                        <div class="input-group-append">
 	                                            <div class="input-group-text">
 	                                                <span class="fas fa-mobile-alt"></i></span>
@@ -217,7 +230,7 @@
 	                                <div class="form-group">
 	                                    <label>Razón social</label>
 	                                    <div class="input-group mb-3">
-	                                        <input type="text" class="form-control" placeholder="Ingrese la razón social" name="tlf_agency" >
+	                                        <input type="text" class="form-control" placeholder="Ingrese la razón social" name="desc_sociality" v-model="agency.desc_sociality">
 	                                        <div class="input-group-append">
 	                                            <div class="input-group-text">
 	                                                <span class="far fa-file-alt"></span>
@@ -230,7 +243,7 @@
 	                                <div class="form-group">
 	                                    <label>Páis</label>
 										<div class="input-group mb-3">
-										<select class="form-control" name="type" >
+										<select class="form-control" name="type" name="country" v-model="agency.country">
 											<option value="">-- Seleccionar --</option>
 											<option value="Incapacidad">Incapacidad</option>
 											<option value="Ausencia">Ausencia</option>
@@ -253,9 +266,9 @@
 	                            </div>
 								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
 	                                <div class="form-group">
-									<label>Ciudad</label>
+									<label>Estado</label>
 									<div class="input-group mb-3">
-										<select class="form-control" name="type" >
+										<select class="form-control" name="state" v-model="agency.state">
 											<option value="">-- Seleccionar --</option>
 											<option value="Incapacidad">Incapacidad</option>
 											<option value="Ausencia">Ausencia</option>
@@ -275,30 +288,24 @@
 										</div>
 	                                </div>
 	                            </div>
-	                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-	                            	<div class="form-group">
-	                            		<div class="form-check">
-						                    <input type="checkbox" class="form-check-input" id="is_active" >
-						                    <label class="form-check-label" for="is_active"> Activo</label>
-						                </div>
-	                            	</div>
-	                            </div>
-								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-									<div class="alert alert-primary" role="alert">
-			                            <h4 class="alert-heading">IMPORTANTE: </h4>
-			                            <p class="mb-0">
-			                                Todos los campos con (*) deben ser completados
-			                            </p>
-			                        </div>
-								</div>
                             </div>
                         </div>
 					</div>
+					<div class="row">
+						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="alert alert-primary" role="alert">
+								<h4 class="alert-heading">IMPORTANTE: </h4>
+								<p class="mb-0">
+									Todos los campos con (*) deben ser completados
+								</p>
+							</div>
+						</div>
+					</div>
 					<div class="modal-footer modal-footer-uniform">			
 						<div class="row">
-							<div class="col-12 col-md-12">
-								<button type="button" id="form-close-modal" class="btn btn-dark mr-1 mb-1 waves-effect waves-light" data-dismiss="modal">Cerrar</button>
-								<button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light float-right" :disabled="loading == true">
+							<div class="col-12 col-md-12 text-center">
+								<button type="button" id="form-close-modal" class="btn btn-danger text-white mr-1 mb-2 waves-effect waves-light" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
+								<button type="submit" class="btn btn-primary mr-1 mb-2 waves-effect waves-light" :disabled="loading == true">
                                     <template v-if="!loading">
                                         <i class="fa fa-sign-in"></i> Guardar
                                     </template>

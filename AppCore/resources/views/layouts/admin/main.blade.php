@@ -22,9 +22,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> 
 
-
+    <!-- CDN Material Desing Css-->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- CDN Vuetify Css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.6.2/vuetify.css" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('AppResources/plugins/forms/validation/form-validation.css') }}">
     <!-- END: Page CSS-->
+    
     
     
     <!-- Theme style -->
@@ -105,9 +110,9 @@
                         @if(Auth::user()->is_superadmin )
                         <li class="nav-item">
                             <a href="{{ route('admin.agencyCreate') }}" class="nav-link @if(request()->routeIs('admin.agencyCreate')) active @endif">
-                                <i class="nav-icon fas fa-user-clock"></i>
+                                <i class="nav-icon fas fa-building"></i>
                                 <p>
-                                    Agency
+                                    Empresas
                                 </p>
                             </a>
                         </li>
@@ -277,7 +282,8 @@
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/vue.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/axios.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
-
+    <!-- Vuetify Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.6.2/vuetify.js"></script>
 
     <script type="text/javascript">const APP_URL = "{{ asset('/') }}";$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});axios.defaults.baseURL=APP_URL;const APP_ERRORS = "{{ session('errors') ? session('errors') : ''}}";</script>
     <script type="text/javascript" src="{{ asset('AppResources/js/admin/main.js') }}"></script>
