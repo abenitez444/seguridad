@@ -125,9 +125,9 @@
 	<!--Modal register and edit agency-->
 	@if(Auth::user()->is_superadmin || Auth::user()->has_role('create_shifts') || Auth::user()->has_role('edit_shifts'))
 	<div class="modal modal-right fade" id="modal-form" tabindex="-1" >
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog">
 			<form onsubmit="return false;" id="form_" class="form form-vertical">
-				<div class="modal-content">
+				<div class="modal-content col-md-6 offset-3">
 					<div class="modal-header">
 						<h5 class="modal-title">Agregar / Editar</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -141,7 +141,7 @@
 								<v-row>
 									<v-col cols="12" md="12" lg="12" class="text-center">
 										<v-avatar
-										size="130"
+										size="200"
 										color="grey"
 										>
 											<v-img :src="previewAvatar"></v-img>
@@ -149,7 +149,7 @@
 									</v-col>
 								</v-row>
 								<v-row>
-									<v-col cols="12" md="4" lg="4" class="text-center offset-4">
+									<v-col cols="12" md="6" lg="6" class="text-center offset-3">
 										<v-file-input
 											placeholder="Cargar imagen"
 											label="Avatar"
@@ -161,7 +161,8 @@
 						    </form>	
 							</template>
 							<div class="row">
-								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+							<div class="col-md-12 offset-1">
+								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
 									<div class="form-group">
 										<label>Nombre empresa *</label>
 										<div class="input-group mb-3">
@@ -174,7 +175,7 @@
 										</div>
 									</div>
 								</div>
-	                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+	                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 	                                    <label>RUT</label>
 	                                    <div class="input-group mb-3">
@@ -187,7 +188,8 @@
 	                                    </div>
 	                                </div>
 	                            </div>
-	                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+							
+	                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 	                                    <label>Email empresa</label>
 	                                    <div class="input-group mb-3">
@@ -200,7 +202,7 @@
 	                                    </div>
 	                                </div>
 	                            </div>
-	                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+	                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 	                                    <label>Teléfono empresa</label>
 	                                    <div class="input-group mb-3">
@@ -213,7 +215,7 @@
 	                                    </div>
 	                                </div>
 	                            </div>
-								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 	                                    <label>Teléfono movil/WhatsApp</label>
 	                                    <div class="input-group mb-3">
@@ -226,7 +228,7 @@
 	                                    </div>
 	                                </div>
 	                            </div>
-								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 	                                    <label>Razón social</label>
 	                                    <div class="input-group mb-3">
@@ -239,13 +241,14 @@
 	                                    </div>
 	                                </div>
 	                            </div>
-								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 	                                    <label>Páis</label>
 										<div class="input-group mb-3">
-										<select class="form-control" name="country" :items="countries" item-text="id" item-value="nombre" v-on:change="getCountries" v-model="agency.country">
-											<option value="">-- Seleccionar --</option>
-											
+										<select class="form-control" name="country" v-model="agency.country">
+										<option v-for="item in countries" :countries="countries">
+											{{ item.name }}
+										</option>
 										</select>
 										<div class="input-group-append">
 											<div class="input-group-text">
@@ -255,7 +258,7 @@
 										</div>
 									</div>
 	                            </div>
-								<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
 	                                <div class="form-group">
 									<label>Estado</label>
 									<div class="input-group mb-3">
@@ -277,10 +280,11 @@
 												<span class="fas fa-city"></span>
 											</div>
 										</div>
-	                                </div>
-	                            </div>
-                            </div>
-                        </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -298,7 +302,7 @@
 								<button type="button" id="form-close-modal" class="btn btn-danger text-white mr-1 mb-2 waves-effect waves-light" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
 								<button type="submit" class="btn btn-primary mr-1 mb-2 waves-effect waves-light" :disabled="loading == true">
                                     <template v-if="!loading">
-                                        <i class="fa fa-sign-in"></i> Guardar
+									<i class="far fa-share-square"></i> Guardar
                                     </template>
                                     <template v-if="loading">
                                         <i class="fa fa-spinner fa-spin"></i>

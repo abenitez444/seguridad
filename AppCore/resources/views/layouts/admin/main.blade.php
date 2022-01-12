@@ -281,7 +281,6 @@
     <script src="{{ asset('AppResources/template_html/dist/js/demo.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/vue.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/axios.js') }}"></script>
-    <script></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
     <!-- Vuetify Js https://www.universal-tutorial.com/api/getaccesstoken
 

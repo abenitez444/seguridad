@@ -68,9 +68,10 @@ new Vue({
 		  this.previewAvatar = URL.createObjectURL(e)
 		},
 		getCountries(){
-			axios.post(" {{route('admin.getCountries')}} ")
+			axios.get('/admin_/get')
 			.then((res) => {
-				console.log(res)
+				this.countries = res.data.country;
+				
 			})
 			.catch((error) => {
 			// eslint-disable-next-line no-console

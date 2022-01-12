@@ -24,7 +24,7 @@ Route::group(['prefix' => '/'], function(){
 Route::group(['prefix' => 'admin_'], function(){
 		Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard');
 		Route::get('/create', 'Admin\agencyController@index')->name('admin.agencyCreate');
-		Route::post('/get', 'Admin\agencyController@getCountries')->name('admin.getCountries');
+		Route::get('/get', 'Admin\agencyController@getCountries')->name('admin.getCountries');
 
 		// Auth
 		Route::post('/login', 'Admin\Auth\LoginController@login')->name('admin.login');
