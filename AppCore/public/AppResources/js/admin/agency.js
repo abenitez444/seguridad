@@ -7,6 +7,7 @@ new Vue({
 		avatar:'',
 		previewAvatar:'',
 		disabledSend: false,
+		countries:[],
 		agency: {
 			name_agency: '',
 			rut: '',
@@ -45,6 +46,7 @@ new Vue({
 		this.loading = true;
 		//Avatar agency//
 		this.previewAvatar= '/img/newyork.jpg';
+		this.getCountries()
 	},
 	methods: {
 		makePagination: function(response){
@@ -65,11 +67,15 @@ new Vue({
 		  this.avatar = e;
 		  this.previewAvatar = URL.createObjectURL(e)
 		},
-		uploadCountry(){
-			console.log("Pais");
-		},
-		uploadStates(){
-			console.log("Estado");
+		getCountries(){
+			axios.post(" {{route('admin.getCountries')}} ")
+			.then((res) => {
+				console.log(res)
+			})
+			.catch((error) => {
+			// eslint-disable-next-line no-console
+			console.log(error)
+			})
 		},
 		changePerPage()
 		{

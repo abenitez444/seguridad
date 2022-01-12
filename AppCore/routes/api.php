@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Admin\agencyController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,4 +26,8 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::post('/delete-cart', 'api\CartController@deleteCart')->name('api.deleteCart');
 
 	Route::get('/get-methods-pay/{id_cart}', 'api\UserController@getMethodsPay');
+});
+Route::group(['prefix' => 'admin_'], function(){
+
+	Route::post('/get/countries', 'api\agencyController@getCountries')->name('api.getCountries');
 });

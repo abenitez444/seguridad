@@ -243,18 +243,9 @@
 	                                <div class="form-group">
 	                                    <label>Páis</label>
 										<div class="input-group mb-3">
-										<select class="form-control" name="type" name="country" v-model="agency.country">
+										<select class="form-control" name="country" :items="countries" item-text="id" item-value="nombre" v-on:change="getCountries" v-model="agency.country">
 											<option value="">-- Seleccionar --</option>
-											<option value="Incapacidad">Incapacidad</option>
-											<option value="Ausencia">Ausencia</option>
-											<option value="Permiso remunerado">Permiso remunerado</option>
-											<option value="Permiso no remunerado">Permiso no remunerado</option>
-											<option value="Licencia de Maternidad">Licencia de Maternidad</option>
-											<option value="Licencia de Luto">Licencia de Luto</option>
-											<option value="Vacaciones">Vacaciones</option>
-											<option value="Sanciones">Sanciones</option>
-											<option value="Cambio de Turno">Cambio de Turno</option>
-											<option value="Desvinculación">Desvinculación</option>
+											
 										</select>
 										<div class="input-group-append">
 											<div class="input-group-text">

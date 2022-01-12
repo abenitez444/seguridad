@@ -281,8 +281,11 @@
     <script src="{{ asset('AppResources/template_html/dist/js/demo.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/vue.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/axios.js') }}"></script>
+    <script></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
-    <!-- Vuetify Js -->
+    <!-- Vuetify Js https://www.universal-tutorial.com/api/getaccesstoken
+
+Laravel crud with axios yputu-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.6.2/vuetify.js"></script>
 
     <script type="text/javascript">const APP_URL = "{{ asset('/') }}";$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});axios.defaults.baseURL=APP_URL;const APP_ERRORS = "{{ session('errors') ? session('errors') : ''}}";</script>
