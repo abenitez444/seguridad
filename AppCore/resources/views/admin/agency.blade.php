@@ -127,9 +127,9 @@
 	<div class="modal modal-right fade" id="modal-form" tabindex="-1" >
 		<div class="modal-dialog">
 			<form onsubmit="return false;" id="form_" class="form form-vertical">
-				<div class="modal-content col-md-6 offset-3">
+				<div class="modal-content col-md-7 offset-3 p-10" style="border-radius:10px;">
 					<div class="modal-header">
-						<h5 class="modal-title">Agregar / Editar</h5>
+						<h5 class="modal-title"><i class="fas fa-city"></i> Agregar / Editar</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -148,11 +148,10 @@
 												<v-img :src="previewAvatar"></v-img>
 											</v-avatar>
 										</v-col>
-									</v-row>
-									<v-row>
-										<v-col cols="12" md="6" lg="6" class="text-center mb-3 offset-3">
+										<v-col cols="12" md="6" lg="6" class="text-center mb-6 offset-3" style="margin-top:-15px;">
 											<v-file-input
 												placeholder="Cargar imagen"
+												prepend-icon="mdi-camera-image"
 												label="Avatar"
 												type="file"
 												v-on:change="setAvatar"
@@ -164,63 +163,75 @@
 							<template>
 								<v-form ref="form" v-model="agency.valid" lazy-validation>
 									<v-row>
-										<v-col cols="12" class="offset-1">
-											<v-col cols="12" md="10" lg="10">
-												<v-text-field
-													v-model="agency.name_agency"
-													:rules="rules.nameRules"
-													prepend-icon="mdi-city-variant"
-													maxlength="50"
-													label="Empresa"
-													required>
-												</v-text-field>
-											</v-col>
-											<v-col cols="10" md="10" lg="10">
-												<v-text-field
-													v-model="agency.rut"
-													prepend-icon="mdi-credit-card-plus-outline"
-													maxlength="50"
-													label="RUT"
-													required>
-												</v-text-field>
-											</v-col>
-											<v-col cols="10" md="10" lg="10">
-												<v-text-field
+										<v-col cols="12" sm="6" md="12" lg="12">
+											<v-row>
+											   <v-col cols="12" sm="6" md="12" lg="12">
+													<small class="mb-2"> <i class="fas fa-city fa-sm"></i> Información de la empresa.</small>
+											   </v-col>
+											</v-row>
+											<v-row>
+												<v-col cols="12" md="6" lg="6">
+													<v-text-field
+														v-model="agency.name_agency"
+														:rules="rules.nameRules"
+														prepend-icon="mdi-city-variant"
+														maxlength="50"
+														label="Empresa"
+														required>
+													</v-text-field>
+												</v-col>
+												<v-col cols="12" md="6" lg="6">
+													<v-text-field
+														v-model="agency.rut"
+														prepend-icon="mdi-credit-card-plus-outline"
+														maxlength="50"
+														label="RUT"
+														required>
+													</v-text-field>
+												</v-col>
+											</v-row>
+											<v-row>
+												<v-col cols="12" md="6" lg="6">
+													<v-text-field
 													v-model="agency.email"
 													:rules="rules.emailRules"
 													prepend-icon='mdi-email'
 													maxlength="50"
-													label="Correo electrónico"
+													label="Correo"
 													required>
-												</v-text-field>
-											</v-col>
-											<v-col cols="10" md="10" lg="10">
-												<v-text-field
+													</v-text-field>
+												</v-col>
+												<v-col cols="12" md="6" lg="6">
+													<v-text-field
 													v-model="agency.local_agency"
 													prepend-icon='mdi-phone'
 													maxlength="50"
 													label="Teléfono"
 													>
-												</v-text-field>
-											</v-col>
-											<v-col cols="10" md="10" lg="10">
+													</v-text-field>
+												</v-col>
+											</v-row>
+											<v-row>
+												<v-col cols="12" md="6" lg="6">
+													<v-text-field
+														v-model="agency.tlf_agency"
+														prepend-icon='mdi-cellphone-android'
+														maxlength="50"
+														label="Celular"
+														>
+													</v-text-field>
+												</v-col>
+												<v-col cols="12" md="6" lg="6" sm="6">
 												<v-text-field
-													v-model="agency.tlf_agency"
-													prepend-icon='mdi-cellphone-android'
-													maxlength="50"
-													label="Celular"
-													>
-												</v-text-field>
-											</v-col>
-											<v-col cols="10" md="10" lg="10" sm="6">
-											<v-text-field
-												v-model="agency.desc_sociality"
-												label="Razón social"
-												prepend-icon="mdi-comment"
-												></v-text-field>
-											</v-col>
-											<v-col cols="6" sm="4" md="10" lg="10">
-												<v-autocomplete
+													v-model="agency.desc_sociality"
+													label="Razón social"
+													prepend-icon="mdi-comment"
+													></v-text-field>
+												</v-col>
+											</v-row>
+											<v-row>
+												<v-col cols="6" sm="4" md="6" lg="6">
+													<v-autocomplete
 													v-model="agency.country"
 													label="País"
 													:items="countries"
@@ -230,9 +241,9 @@
 													v-on:change="getStates"
 													required>
 												</v-autocomplete>
-											</v-col>
-											<v-col cols="6" sm="4" md="10" lg="10">
-												<v-autocomplete
+												</v-col>
+												<v-col cols="6" sm="4" md="6" lg="6">
+													<v-autocomplete
 													v-model="agency.state"
 													label="Estado"
 													:items="states"
@@ -243,27 +254,30 @@
 													:disabled="stateDisabled"
 													required>
 												</v-autocomplete>
-											</v-col>
-											<v-col cols="6" sm="4" md="10" lg="10">
-												<v-text-field
-												v-model="agency.password"
-												label="Contraseña"
-												name="password"
-												prepend-icon="mdi-lock"
-												type="password"
-												:rules="rules.passwordRules"
-												/>
-											</v-col>
-											<v-col cols="6" sm="4" md="10" lg="10">
-												<v-text-field
-												v-model="agency.confirmPassword"
-												label="Confirmar contraseña"
-												name="confirmPassword"
-												prepend-icon="mdi-lock"
-												type="password"
-												:rules="rules.confirmPasswordRules.concat(passwordConfirmationRule)"
-												/>
-											</v-col>
+												</v-col>
+											</v-row>
+											<v-row>
+												<v-col cols="12" sm="4" md="6" lg="6">
+													<v-text-field
+													v-model="agency.password"
+													label="Contraseña"
+													name="password"
+													prepend-icon="mdi-lock"
+													type="password"
+													:rules="rules.passwordRules"
+													/>
+												</v-col>
+												<v-col cols="12" sm="4" md="6" lg="6">
+													<v-text-field
+													v-model="agency.confirmPassword"
+													label="Confirmar"
+													name="confirmPassword"
+													prepend-icon="mdi-lock"
+													type="password"
+													:rules="rules.confirmPasswordRules.concat(passwordConfirmationRule)"
+													/>
+												</v-col>
+										    </v-row>
 										</v-col>
 									</v-row>
 								</v-form>
@@ -283,9 +297,9 @@
 					<div class="modal-footer modal-footer-uniform">			
 						<template>
 							<v-row>
-								<v-col cols="12" md="12" lg="12" sm="6">
+								<v-col cols="12" md="12" lg="12" sm="6" class="text-center">
 									<v-btn type="button" id="form-close-modal" class="btn btn-dark mr-1 mb-1 waves-effect waves-light" data-dismiss="modal">Cerrar</v-btn>
-									<v-btn color="dark" @click="saveItem">Guardar</v-btn>
+									<v-btn class="btn btn-dark mr-1 mb-1 waves-effect waves-light" @click="saveItem">Guardar</v-btn>
 								</v-col>
 							</v-row>
 						</template>
