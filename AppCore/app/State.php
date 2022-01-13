@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class State extends Model
 {
-    protected $table = 'countries';
+    protected $table = 'states';
 
     /**
      * The attributes that are mass assignable.
@@ -15,6 +15,7 @@ class Country extends Model
      */
     protected $fillable = [
         'id',
+        'pais_id',
         'name',
     ];
 }

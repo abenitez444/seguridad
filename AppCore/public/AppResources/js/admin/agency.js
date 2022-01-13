@@ -1,5 +1,6 @@
 new Vue({
 	el: '#app-main',
+	vuetify: new Vuetify(),
 	data: () => ({
 		loading: true,
 		sending: false,
@@ -8,6 +9,8 @@ new Vue({
 		previewAvatar:'',
 		disabledSend: false,
 		countries:[],
+		states:[],
+		stateDisabled:true,
 		agency: {
 			name_agency: '',
 			rut: '',
@@ -17,8 +20,32 @@ new Vue({
 			desc_sociality: '',
 			country: '',
 			state: '',
+			password: '',
+			confirmPassword: '',
+			valid: true,
+			is_active: '',
 		},
 		form: {},
+		rules:{
+			passwordRules: [
+				v => !!v || 'Por favor escriba la contraseña.',
+				v => (v && v.length >= 6) || 'Mínimo 6 caracteres',
+			],
+			confirmPasswordRules: [
+				v => !!v || 'La contraseña es requerida',
+			],
+			nameRules: [
+			  v => !!v || 'El campo nombre de empresa es requerido.',
+			  v => (v && v.length <= 50) || 'El campo  nombre de empresa debe contener máximo 50 caracteres.',
+			  v => (v && v.length >= 3) || 'El campo  nombre de empresa debe contener mínimo 3 caracteres.',
+			],
+			emailRules: [
+				v => !!v || 'El campo nombre de empresa es requerido.',
+				v => (v && v.length <= 50) || 'El campo  nombre de empresa debe contener máximo 50 caracteres.',
+				v => (v && v.length >= 3) || 'El campo  nombre de empresa debe contener mínimo 3 caracteres.',
+				v => /.+@.+\..+/.test(v) || 'El nombre de empresa debe ser válido.',
+			  ],
+		},
 		pagination: {
 			'total': 0,
 			'current_page': 1,
@@ -41,12 +68,24 @@ new Vue({
         rows: [],
         filter: '',
         per_page: 100,
+
 	}),
 	created() {
 		this.loading = true;
 		//Avatar agency//
 		this.previewAvatar= '/img/newyork.jpg';
-		this.getCountries()
+		this.getCountries();
+		if(this.data) 
+		{
+		  this.$refs.form.resetValidation()
+		  this.agency = this.data;
+		 
+		  if(this.data.country || this.data.state)
+          {
+            this.data.country = this.data.country;
+            this.getStates();
+          }
+		}
 	},
 	methods: {
 		makePagination: function(response){
@@ -68,15 +107,37 @@ new Vue({
 		  this.previewAvatar = URL.createObjectURL(e)
 		},
 		getCountries(){
-			axios.get('/admin_/get')
+			axios.get('/admin_/getCountries')
 			.then((res) => {
 				this.countries = res.data.country;
-				
+				this.states = res.data.state;
 			})
 			.catch((error) => {
 			// eslint-disable-next-line no-console
 			console.log(error)
 			})
+		},
+		getStates(){
+			
+			const code = this.agency.country
+      
+			axios.get(
+			  `/admin_/getStates/${code}`
+			  )
+			  .then((res) => {
+
+				let estados = res.data.states
+	
+				if(estados.length > 0){
+				  this.states = res.data.states
+				  this.stateDisabled = false
+				}else{
+				  this.stateDisabled = true
+				}
+			  })
+			  .catch((error) => {
+				console.log(error)
+			  })
 		},
 		changePerPage()
 		{
@@ -137,17 +198,18 @@ new Vue({
 			
 		},
 		saveItem() {
-			var url = '/admin_/shifts';
+			var url = '/admin_/agencyStore';
 			this.loading = true;
-			axios.post(url, this.shift).then(response => {
+			axios.post(url, this.agency).then(response => {
 				this.getAllWithPagination();
-				Swal.fire({
-	                  position: 'center',
-	                  icon: 'success',
-	                  title: 'Se ha guardado con éxito',
-	                  showConfirmButton: false,
-	                  timer: 1300
-	                });
+				console.log(response)
+				// Swal.fire({
+	            //       position: 'center',
+	            //       icon: 'success',
+	            //       title: 'Se ha guardado con éxito',
+	            //       showConfirmButton: false,
+	            //       timer: 1300
+	            //     });
 				$("#modal-form").modal('hide');
 				this.loading = false;
 			}).catch(error => {
@@ -170,12 +232,11 @@ new Vue({
 	                });
                 }
 			});
-
 		},
 		updateItem() {
-			var url = '/admin_/shifts/'+this.shift.id;
+			var url = '/admin_/agency/'+this.agency.id;
 			this.loading = true;
-			axios.put(url, this.shift).then(response => {
+			axios.put(url, this.agency).then(response => {
 				this.getAllWithPagination();
 				Swal.fire({
 	                  position: 'center',
@@ -268,19 +329,26 @@ new Vue({
 		addNew() {
 			this.action = 'save';
 			this.agency = {
-				//name_agency: '',
-				// turn: '',
-		        // cant_turn: '',
-		        // cant_total: '',
-		        // cant_watchmen: '',
-		        // d: '',
-		        // n: '',
-		        // x: '',
-		        // is_active: 1,
+				name_agency: '',
+				rut: '',
+				email: '',
+				local_agency: '',
+				tlf_agency: '',
+				desc_sociality: '',
+				country: '',
+				state: '',
+				password: '',
+				confirmPassword: '',
+				valid: true,
+				is_active: 1,
 			};
 		},
 	},
 	computed: {
+		passwordConfirmationRule() {
+			return () =>
+			  this.agency.password === this.agency.confirmPassword || "Las contraseñas no coinciden.";
+		},
     	isActived: function() {
     		return this.pagination.current_page;
     	},

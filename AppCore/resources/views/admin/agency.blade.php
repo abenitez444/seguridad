@@ -136,155 +136,139 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-body">
+						<v-app>
 							<template>
-							<form enctype="multipart/form-data" id="formImg">
-								<v-row>
-									<v-col cols="12" md="12" lg="12" class="text-center">
-										<v-avatar
-										size="200"
-										color="grey"
-										>
-											<v-img :src="previewAvatar"></v-img>
-										</v-avatar>
-									</v-col>
-								</v-row>
-								<v-row>
-									<v-col cols="12" md="6" lg="6" class="text-center offset-3">
-										<v-file-input
-											placeholder="Cargar imagen"
-											label="Avatar"
-											type="file"
-											v-on:change="setAvatar"
-										></v-file-input>
-									</v-col>
-								</v-row>
-						    </form>	
+								<form enctype="multipart/form-data" id="formImg">
+									<v-row>
+										<v-col cols="12" md="12" lg="12" class="text-center">
+											<v-avatar
+											size="200"
+											color="grey"
+											>
+												<v-img :src="previewAvatar"></v-img>
+											</v-avatar>
+										</v-col>
+									</v-row>
+									<v-row>
+										<v-col cols="12" md="6" lg="6" class="text-center mb-3 offset-3">
+											<v-file-input
+												placeholder="Cargar imagen"
+												label="Avatar"
+												type="file"
+												v-on:change="setAvatar"
+											></v-file-input>
+										</v-col>
+									</v-row>
+								</form>	
 							</template>
-							<div class="row">
-							<div class="col-md-12 offset-1">
-								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
-									<div class="form-group">
-										<label>Nombre empresa *</label>
-										<div class="input-group mb-3">
-											<input type="text" class="form-control" placeholder="Ingrese el nombre de la empresa" name="name_agency" v-model="agency.name_agency">
-											<div class="input-group-append">
-												<div class="input-group-text">
-													<span class="fas fa-file-signature"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-	                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-	                                    <label>RUT</label>
-	                                    <div class="input-group mb-3">
-	                                        <input type="text"  class="form-control" placeholder="Ingrese el rut de la empresa" name="rut" v-model="agency.rut">
-	                                        <div class="input-group-append">
-	                                            <div class="input-group-text">
-	                                                <span class="fas fa-credit-card"></span>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-							
-	                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-	                                    <label>Email empresa</label>
-	                                    <div class="input-group mb-3">
-	                                        <input type="email" min="0" class="form-control" placeholder="Ingrese el correo electrónico de la empresa" name="email" v-model="agency.email">
-	                                        <div class="input-group-append">
-	                                            <div class="input-group-text">
-	                                                <span class="fas fa-envelope"></span>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-	                                    <label>Teléfono empresa</label>
-	                                    <div class="input-group mb-3">
-	                                        <input type="number" min="11" class="form-control" placeholder="Ingrese teléfono de la empresa" name="local_agency" v-model="agency.local_agency">
-	                                        <div class="input-group-append">
-	                                            <div class="input-group-text">
-	                                                <span class="fas fa-phone"></span>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-	                                    <label>Teléfono movil/WhatsApp</label>
-	                                    <div class="input-group mb-3">
-	                                        <input type="number" min="11" class="form-control" placeholder="Ingrese el movil de la empresa" name="tlf_agency" v-model="agency.tlf_agency">
-	                                        <div class="input-group-append">
-	                                            <div class="input-group-text">
-	                                                <span class="fas fa-mobile-alt"></i></span>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-	                                    <label>Razón social</label>
-	                                    <div class="input-group mb-3">
-	                                        <input type="text" class="form-control" placeholder="Ingrese la razón social" name="desc_sociality" v-model="agency.desc_sociality">
-	                                        <div class="input-group-append">
-	                                            <div class="input-group-text">
-	                                                <span class="far fa-file-alt"></span>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-	                                    <label>Páis</label>
-										<div class="input-group mb-3">
-										<select class="form-control" name="country" v-model="agency.country">
-										<option v-for="item in countries" :countries="countries">
-											{{ item.name }}
-										</option>
-										</select>
-										<div class="input-group-append">
-											<div class="input-group-text">
-												<span class="fas fa-globe-europe"></span>
-											</div>
-										</div>
-										</div>
-									</div>
-	                            </div>
-								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
-	                                <div class="form-group">
-									<label>Estado</label>
-									<div class="input-group mb-3">
-										<select class="form-control" name="state" v-model="agency.state">
-											<option value="">-- Seleccionar --</option>
-											<option value="Incapacidad">Incapacidad</option>
-											<option value="Ausencia">Ausencia</option>
-											<option value="Permiso remunerado">Permiso remunerado</option>
-											<option value="Permiso no remunerado">Permiso no remunerado</option>
-											<option value="Licencia de Maternidad">Licencia de Maternidad</option>
-											<option value="Licencia de Luto">Licencia de Luto</option>
-											<option value="Vacaciones">Vacaciones</option>
-											<option value="Sanciones">Sanciones</option>
-											<option value="Cambio de Turno">Cambio de Turno</option>
-											<option value="Desvinculación">Desvinculación</option>
-										</select>
-										<div class="input-group-append">
-											<div class="input-group-text">
-												<span class="fas fa-city"></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+							<template>
+								<v-form ref="form" v-model="agency.valid" lazy-validation>
+									<v-row>
+										<v-col cols="12" class="offset-1">
+											<v-col cols="12" md="10" lg="10">
+												<v-text-field
+													v-model="agency.name_agency"
+													:rules="rules.nameRules"
+													prepend-icon="mdi-city-variant"
+													maxlength="50"
+													label="Empresa"
+													required>
+												</v-text-field>
+											</v-col>
+											<v-col cols="10" md="10" lg="10">
+												<v-text-field
+													v-model="agency.rut"
+													prepend-icon="mdi-credit-card-plus-outline"
+													maxlength="50"
+													label="RUT"
+													required>
+												</v-text-field>
+											</v-col>
+											<v-col cols="10" md="10" lg="10">
+												<v-text-field
+													v-model="agency.email"
+													:rules="rules.emailRules"
+													prepend-icon='mdi-email'
+													maxlength="50"
+													label="Correo electrónico"
+													required>
+												</v-text-field>
+											</v-col>
+											<v-col cols="10" md="10" lg="10">
+												<v-text-field
+													v-model="agency.local_agency"
+													prepend-icon='mdi-phone'
+													maxlength="50"
+													label="Teléfono"
+													>
+												</v-text-field>
+											</v-col>
+											<v-col cols="10" md="10" lg="10">
+												<v-text-field
+													v-model="agency.tlf_agency"
+													prepend-icon='mdi-cellphone-android'
+													maxlength="50"
+													label="Celular"
+													>
+												</v-text-field>
+											</v-col>
+											<v-col cols="10" md="10" lg="10" sm="6">
+											<v-text-field
+												v-model="agency.desc_sociality"
+												label="Razón social"
+												prepend-icon="mdi-comment"
+												></v-text-field>
+											</v-col>
+											<v-col cols="6" sm="4" md="10" lg="10">
+												<v-autocomplete
+													v-model="agency.country"
+													label="País"
+													:items="countries"
+													item-text="name"
+													item-value="id"
+													prepend-icon='mdi-map-marker'
+													v-on:change="getStates"
+													required>
+												</v-autocomplete>
+											</v-col>
+											<v-col cols="6" sm="4" md="10" lg="10">
+												<v-autocomplete
+													v-model="agency.state"
+													label="Estado"
+													:items="states"
+													item-text="name"
+													item-value="id"
+													prepend-icon='mdi-map-marker'
+													v-on:change="getStates"
+													:disabled="stateDisabled"
+													required>
+												</v-autocomplete>
+											</v-col>
+											<v-col cols="6" sm="4" md="10" lg="10">
+												<v-text-field
+												v-model="agency.password"
+												label="Contraseña"
+												name="password"
+												prepend-icon="mdi-lock"
+												type="password"
+												:rules="rules.passwordRules"
+												/>
+											</v-col>
+											<v-col cols="6" sm="4" md="10" lg="10">
+												<v-text-field
+												v-model="agency.confirmPassword"
+												label="Confirmar contraseña"
+												name="confirmPassword"
+												prepend-icon="mdi-lock"
+												type="password"
+												:rules="rules.confirmPasswordRules.concat(passwordConfirmationRule)"
+												/>
+											</v-col>
+										</v-col>
+									</v-row>
+								</v-form>
+							</template>
+						</v-app>
 					</div>
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -297,19 +281,14 @@
 						</div>
 					</div>
 					<div class="modal-footer modal-footer-uniform">			
-						<div class="row">
-							<div class="col-12 col-md-12 text-center">
-								<button type="button" id="form-close-modal" class="btn btn-danger text-white mr-1 mb-2 waves-effect waves-light" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
-								<button type="submit" class="btn btn-primary mr-1 mb-2 waves-effect waves-light" :disabled="loading == true">
-                                    <template v-if="!loading">
-									<i class="far fa-share-square"></i> Guardar
-                                    </template>
-                                    <template v-if="loading">
-                                        <i class="fa fa-spinner fa-spin"></i>
-                                    </template>
-                                </button>
-							</div>
-						</div>
+						<template>
+							<v-row>
+								<v-col cols="12" md="12" lg="12" sm="6">
+									<v-btn type="button" id="form-close-modal" class="btn btn-dark mr-1 mb-1 waves-effect waves-light" data-dismiss="modal">Cerrar</v-btn>
+									<v-btn color="dark" @click="saveItem">Guardar</v-btn>
+								</v-col>
+							</v-row>
+						</template>
 					</div>
 				</div>
 			</form>
