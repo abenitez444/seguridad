@@ -227,10 +227,10 @@
 	                                    <div class="input-group mb-3">
 	                                        <select class="form-control" name="type" v-model="user.type">
 	                                        	<option value="">-- Seleccionar --</option>
-	                                        	<option value="Vigilante">Vigilante</option>
-	                                        	<option value="Coordinador">Coordinador</option>
-	                                        	<option value="Supervisor">Supervisor</option>
-	                                        	<option value="Administrador">Administrador</option>
+	                                        	<option value="1">Vigilante</option>
+	                                        	<option value="2">Coordinador</option>
+	                                        	<option value="3">Supervisor</option>
+	                                        	<option value="0">Administrador</option>
 	                                        </select>
 	                                        <div class="input-group-append">
 	                                            <div class="input-group-text">

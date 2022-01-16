@@ -278,6 +278,16 @@
 													/>
 												</v-col>
 										    </v-row>
+											<v-row>
+											<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+												<div class="form-group">
+														<div class="form-check">
+															<input type="checkbox" class="form-check-input" id="is_active" v-model="agency.is_active">
+															<label class="form-check-label" for="is_active"> Activo</label>
+														</div>
+													</div>
+												</div>
+											</v-row>
 										</v-col>
 									</v-row>
 								</v-form>
