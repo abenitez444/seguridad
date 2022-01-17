@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AgencysSeeder' => $baseDir . '/database/seeds/AgencysSeeder.php',
+    'App\\Agency' => $baseDir . '/app/Agency.php',
     'App\\Assignment' => $baseDir . '/app/Assignment.php',
     'App\\Clients' => $baseDir . '/app/Clients.php',
     'App\\Console\\Commands\\AlertTasks' => $baseDir . '/app/Console/Commands/AlertTasks.php',
@@ -3964,7 +3966,6 @@ return array(
     'Psy\\CodeCleaner\\StrictTypesPass' => $vendorDir . '/psy/psysh/src/CodeCleaner/StrictTypesPass.php',
     'Psy\\CodeCleaner\\UseStatementPass' => $vendorDir . '/psy/psysh/src/CodeCleaner/UseStatementPass.php',
     'Psy\\CodeCleaner\\ValidClassNamePass' => $vendorDir . '/psy/psysh/src/CodeCleaner/ValidClassNamePass.php',
-    'Psy\\CodeCleaner\\ValidConstantPass' => $vendorDir . '/psy/psysh/src/CodeCleaner/ValidConstantPass.php',
     'Psy\\CodeCleaner\\ValidConstructorPass' => $vendorDir . '/psy/psysh/src/CodeCleaner/ValidConstructorPass.php',
     'Psy\\CodeCleaner\\ValidFunctionNamePass' => $vendorDir . '/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php',
     'Psy\\Command\\BufferCommand' => $vendorDir . '/psy/psysh/src/Command/BufferCommand.php',
@@ -5283,11 +5284,15 @@ return array(
     'phpDocumentor\\Reflection\\PseudoTypes\\CallableString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/CallableString.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\False_' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/False_.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\HtmlEscapedString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/HtmlEscapedString.php',
+    'phpDocumentor\\Reflection\\PseudoTypes\\IntegerRange' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/IntegerRange.php',
+    'phpDocumentor\\Reflection\\PseudoTypes\\List_' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/List_.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\LiteralString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/LiteralString.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\LowercaseString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/LowercaseString.php',
+    'phpDocumentor\\Reflection\\PseudoTypes\\NegativeInteger' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/NegativeInteger.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\NonEmptyLowercaseString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/NonEmptyLowercaseString.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\NonEmptyString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/NonEmptyString.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\NumericString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/NumericString.php',
+    'phpDocumentor\\Reflection\\PseudoTypes\\Numeric_' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/Numeric_.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\PositiveInteger' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/PositiveInteger.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\TraitString' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/TraitString.php',
     'phpDocumentor\\Reflection\\PseudoTypes\\True_' => $vendorDir . '/phpdocumentor/type-resolver/src/PseudoTypes/True_.php',
