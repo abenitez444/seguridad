@@ -111,6 +111,7 @@ new Vue({
 			axios.get('/admin_/getCountries')
 			.then((res) => {
 				this.countries = res.data.country;
+				console.log(res.data)
 				this.states = res.data.state;
 			})
 			.catch((error) => {

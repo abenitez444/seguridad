@@ -18,12 +18,12 @@ class agencyController extends Controller
     public function getCountries(){
         try {
             $country = Country::all();
-            $state = State::all();
+            //$state = State::all();
 
 
             return response()->json([
                 'country' => $country,
-                'state' => $state,
+                //'state' => $state,
             ], 200);
         } catch (\Throwable $th) {
             throw $th;
