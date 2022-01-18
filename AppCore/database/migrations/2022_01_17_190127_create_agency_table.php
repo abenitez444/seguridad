@@ -23,7 +23,7 @@ class CreateAgencyTable extends Migration
             $table->string('desc_sociality')->nullable();
             $table->string('email')->notNullable();
             $table->integer('email_verified');
-            $table->integer('email_verified_at')->default(null);
+            $table->integer('email_verified_at');
             $table->integer('country');
             $table->integer('state');
             $table->string('password')->nullable();

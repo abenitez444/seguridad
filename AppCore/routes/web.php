@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Admin\agencyController;
+use App\Http\Controllers\Admin\Auth\LoginAgencyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,16 +22,20 @@ Route::group(['prefix' => '/'], function(){
 	
 });
 
+
+
 Route::group(['prefix' => 'admin_'], function(){
 		Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard');
 		Route::get('/create', 'Admin\agencyController@index')->name('admin.agencyCreate');
 		Route::get('/getCountries', 'Admin\agencyController@getCountries')->name('admin.getCountries');
 		Route::get('/getStates/{code}', 'Admin\agencyController@getStates')->name('admin.getStates');
 		Route::post('/agencyStore', 'Admin\agencyController@store');
+		Route::post('/business', 'Admin\LoginAgencyController@login')->name('admin.business.login');
+		Route::get('/business', 'Admin\LoginAgencyController@showLoginFormAdmin')->name('admin.business.login');
 		// Auth
 		Route::post('/login', 'Admin\Auth\LoginController@login')->name('admin.login');
 		Route::get('/register', 'Admin\Auth\RegisterController@create')->name('admin.register');
-		Route::get('/login', 'Admin\Auth\LoginController@showLoginFormAdmin')->name('admin.showLoginFormAdmin');
+		Route::get('/login', 'Admin\Auth\LoginController@showLoginFormAdmin')->name('admin.login');
 		
 
 			Route::group(['prefix' => 'users'], function(){
