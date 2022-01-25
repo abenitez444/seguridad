@@ -47,9 +47,9 @@ return [
             'hash' => false,
         ],
         
-        'business' => [
+        'admins' => [
             'driver' => 'session',
-            'provider' => 'business',
+            'provider' => 'admins',
         ],
     ],
 
@@ -76,10 +76,10 @@ return [
             'model' => App\User::class,
         ],
 
-        'business' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Agency::class,
-        ],
+            'model' => App\Agency::class
+        ]
 
         
     ],

@@ -2,32 +2,70 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Agency;
-
+use Illuminate\Support\Facades\Auth;
 
 
 class LoginAgencyController extends Controller
 {
-    
+   /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
     use AuthenticatesUsers;
-    protected $guard = 'business';
+
+   // protected $loginView = 'admin.agency.login-agency';
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
+    protected $guard = 'admins';
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
     public function showLoginFormAdmin()
     {
         return view('admin.agency.login-agency');
-        
     }
+    public function authenticated()
+    {
+        return redirect('/business/admins/area');
+    }
+    public function secret()
+    {
+        return 'Hola' . auth('admins')->user() . 'Correo' . auth('admins')->user()->id;
+    }
+
     public function getAgency($request)
     {
-    	$agency = null;
+    	$user = null;
     	$credentials = $this->credentials($request);
 
     	if (array_key_exists('email', $credentials)) {
     		$agency = Agency::where('email', $credentials['email'])->first();
-    	} else if (array_key_exists('agency', $credentials)) {
-    		$agency = Agency::where('password', $credentials['password'])->first();
+    	} else if (array_key_exists('user', $credentials)) {
+    		$agency = Agency::where('user', $credentials['user'])->first();
     	}
 
     	return $agency;
@@ -35,13 +73,13 @@ class LoginAgencyController extends Controller
 
     public function validateAdmin($request)
     {
-    	$agency = $this->getAgency($request);
+    	$user = $this->getAgency($request);
 
-    	if ($agency === null) {
+    	if ($user === null) {
     		return false;
     	}
 
-    	if ($agency->is_admin) {
+    	if ($user->is_admin) {
     		return true;
     	}
 
@@ -50,13 +88,13 @@ class LoginAgencyController extends Controller
 
     public function validateStatus($request)
     {
-    	$agency = $this->getAgency($request);
+    	$user = $this->getAgency($request);
 
-    	if ($agency === null) {
+    	if ($user === null) {
     		return false;
     	}
 
-    	if ($agency->is_active) {
+    	if ($user->is_active) {
     		return true;
     	}
 
@@ -64,11 +102,15 @@ class LoginAgencyController extends Controller
     }
 
     /**
-     * Send the response after the agency was authenticated.
+     * Send the response after the user was authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    protected function guard()
+    {
+        return Auth::guard('admins');
+    }
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
@@ -76,13 +118,12 @@ class LoginAgencyController extends Controller
         $this->clearLoginAttempts($request);
 
         if($request->ajax()){
-        	$this->authenticated($request, $this->guard()->user());
+        	$this->authenticated($request, $this->guard('admins'));
         	return response()->json(['success' => 1]);
         }
-        return $this->authenticated($request, $this->guard()->user())
+        return $this->authenticated($request, $this->guard('admins'))
                 ?: redirect()->intended($this->redirectPath());
     }
-
     /**
      * Get the failed login response instance.
      *
@@ -94,26 +135,10 @@ class LoginAgencyController extends Controller
     {
         return response()->json(['errors' => $message], 400);
     }
-
+ 
     public function login(Request $request)
     {
-
-  /*       $user = new User();
-         $user->name = 'Mauricio';
-         $user->last_name= 'root';
-    $user->email = 'mauricio.b.o@hotmail.com';
-    $user->password = Hash::make('123456');
-    $user->phone = '676575';
-    $user->type = '0';
-    $user->address='000000';
-    $user->is_active = 1;
-    $user->is_admin = 0;
-    $user->is_superadmin = 1;
-    $user->cellular = '0000';
-    $user->postal_code = '00000';
-    $user->dni = '0000';
-    $user->save();
-*/
+      
     	$this->validateLogin($request);
 
     	if ($this->getAgency($request) === null) {
@@ -139,9 +164,10 @@ class LoginAgencyController extends Controller
         }
 
         $this->incrementLoginAttempts($request);
-
+        
         return $this->sendFailedLogin($request, 'Contraseña inválida');
+       
     }
-    
+  
    
 }

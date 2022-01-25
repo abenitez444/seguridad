@@ -15,14 +15,15 @@ class AgencysSeeder extends Seeder
         DB::table('agency')->insert([
                 
             [ 'avatar' => 'user/avatar0.jpg',
-              'name_agency' => 'Logros C.A',
+              'name' => 'Logros C.A',
+              'last_name' => 'Logros ',
               'rut' => '020613019',
               'local_agency' => '02128708065',
               'tlf_agency' => '04120909876',
               'desc_sociality' => 'Empresa de seguridad',
               'email' => 'abenitez.freelance@gmail.com',
               'email_verified' => 1,
-              'email_verified_at' => 1,
+              'email_verified_at' => NULL,
               'country' => 95,
               'state' => 1684,
               'password' => bcrypt('123456'),
@@ -31,11 +32,11 @@ class AgencysSeeder extends Seeder
               'is_admin' => 0, 
               'is_superadmin' => 1, 
               'type' => 0, 
-              'remember_token' => 'z7cvsvKf9zGTHwU62Ap0Rd1Btr7dSwbKLcBAk7rM5KbGRTwFc1gsVxMkefvN',
+              'remember_token' => Str::random(100),
               'created_at' => NULL,
-              'updated_at' => NULL
+              'updated_at' => '2020-02-21 10:47:22'
             ],
-        
+
         ]);
     }
 }

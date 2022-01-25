@@ -40,7 +40,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-       // return redirect('/login');
+        return redirect('/admin_/login');
     }
 
     public function showLoginFormAdmin()
@@ -48,6 +48,12 @@ class LoginController extends Controller
         return view('admin.auth.login');
     }
 
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        return redirect('/admin_/login'); // redirect somewhere else that a guest can visit
+    }
     public function getUser($request)
     {
     	$user = null;

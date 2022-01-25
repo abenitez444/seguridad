@@ -19,7 +19,7 @@ $(document).ready(function(){
                 this.recoverPass();
                 return false;
             }
-            var url = 'business';
+            var url = 'login';
             this.sending = true;
             axios.post(url, data).then(response => {
                 console.log(response);
@@ -30,7 +30,7 @@ $(document).ready(function(){
                     icon: 'success',
                 });
                 // swal("Acceso completado!", "Se ha iniciado sesión con éxito.", "success");
-                location.href = APP_URL + '/';
+                location.href = "/"
             }).catch(error => {
                 console.log(error.response.data);
                 this.errors = error.response.data;

@@ -56,7 +56,9 @@
                         <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
                     </div>
                     <p class="login-box-msg">Ingrese sus datos de accesos</p>
-                    <form id="form_" onsubmit="return false;" method="post">
+                    <form id="form_" method="post" action="{{url('/business/login')}}">
+                    <input type="text" class="form-control" id="_token" name="_token" value=" {{!! csrf_token() !!}} " required>
+
                         @csrf
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -142,5 +144,6 @@
         const APP_URL = "{{ url('/') }}";
     </script>
     <script type="text/javascript" src="{{ asset('AppResources/js/admin/agency-login.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('AppResources/js/admin/main.js') }}"></script>
 </body>
 </html>

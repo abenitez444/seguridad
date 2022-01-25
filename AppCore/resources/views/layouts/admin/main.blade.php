@@ -286,6 +286,7 @@
     <script type="text/javascript" src="{{ asset('AppResources/plugins/vue/axios.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/plugins/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('AppResources/js/admin/agency.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('AppResources/js/admin/agency-login.js') }}"></script>
     <!-- Vuetify Js https://www.universal-tutorial.com/api/getaccesstoken
 
 Laravel crud with axios yputu-->

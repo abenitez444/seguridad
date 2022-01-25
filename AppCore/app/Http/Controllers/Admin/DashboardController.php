@@ -10,9 +10,11 @@ use Illuminate\Validation\Rule;
 use Validator;
 use DB;
 use App\User;
+use App\Agency;
 use App\Clients;
 use App\Watchmen;
 use App\Assignment;
+
 
 class DashboardController extends Controller
 {
@@ -22,6 +24,14 @@ class DashboardController extends Controller
 	}
 
     public function index()
+    {
+        $clients = Clients::all()->count();
+        $watchmen = Watchmen::all()->count();
+        $assignment = Assignment::all()->count();
+
+        return view('admin.dashboard', ['clients' => $clients, 'watchmen' => $watchmen, 'assignment' => $assignment]);
+    }
+    public function indexAgency()
     {
         $clients = Clients::all()->count();
         $watchmen = Watchmen::all()->count();

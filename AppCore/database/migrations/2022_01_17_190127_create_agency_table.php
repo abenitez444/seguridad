@@ -16,14 +16,15 @@ class CreateAgencyTable extends Migration
         Schema::create('agency', function (Blueprint $table) {
             $table->id();
             $table->string('avatar')->nullable();
-            $table->string('name_agency');
+            $table->string('name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('rut')->nullable();
             $table->string('local_agency')->nullable();
             $table->string('tlf_agency')->nullable();
             $table->string('desc_sociality')->nullable();
             $table->string('email')->notNullable();
             $table->integer('email_verified');
-            $table->integer('email_verified_at');
+            $table->timestamp('email_verified_at')->nullable();
             $table->integer('country');
             $table->integer('state');
             $table->string('password')->nullable();
@@ -32,7 +33,7 @@ class CreateAgencyTable extends Migration
             $table->integer('is_admin');
             $table->integer('is_superadmin');
             $table->integer('type');
-            $table->rememberToken();
+            $table->string('remember_token', 100);
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 use App\Http\Controllers\Admin\agencyController;
 use App\Http\Controllers\Admin\Auth\LoginAgencyController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Session\TokenMismatchException;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,15 @@ Route::group(['prefix' => '/'], function(){
 
 	// Dashboard
 	Route::get('/', 'Admin\DashboardController@index')->name('admin.index');
-	
 });
 
+Route::group(['prefix' => '/business'], function(){
 
+	Route::post('/login', 'Admin\LoginAgencyController@login')->name('business.login');
+	Route::get('/login', 'Admin\LoginAgencyController@showLoginFormAdmin')->name('business.login');
+	Route::post('/agencyStore', 'Admin\agencyController@store');
+	Route::get('/admins/area', 'Admin\LoginAgencyController@secret')->name('business.secret');
+});
 
 Route::group(['prefix' => 'admin_'], function(){
 		Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard');
@@ -30,13 +36,12 @@ Route::group(['prefix' => 'admin_'], function(){
 		Route::get('/getCountries', 'Admin\agencyController@getCountries')->name('admin.getCountries');
 		Route::get('/getStates/{code}', 'Admin\agencyController@getStates')->name('admin.getStates');
 		Route::post('/agencyStore', 'Admin\agencyController@store');
-		Route::post('/business', 'Admin\LoginAgencyController@login')->name('admin.business.login');
-		Route::get('/business', 'Admin\LoginAgencyController@showLoginFormAdmin')->name('admin.business.login');
+		
 		// Auth
 		Route::post('/login', 'Admin\Auth\LoginController@login')->name('admin.login');
 		Route::get('/register', 'Admin\Auth\RegisterController@create')->name('admin.register');
 		Route::get('/login', 'Admin\Auth\LoginController@showLoginFormAdmin')->name('admin.login');
-		
+		Route::post('logout', 'Admin\Auth\LoginController@logout')->name('logout');
 
 			Route::group(['prefix' => 'users'], function(){
 				Route::get('/profile', 'Admin\DashboardController@showProfile')->name('users.showProfile');
